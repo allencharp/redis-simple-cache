@@ -189,7 +189,7 @@ class SimpleCacheTest(TestCase):
         len_keys_before = len(self.c.keys())
         self.c.flush_namespace('foo')
         len_keys_after = len(self.c.keys())
-        self.assertEqual((len_keys_before - len_keys_after), 2)#error
+        self.assertEqual((len_keys_before - len_keys_after), 2)#error need to be fix
         self.assertEqual(self.c.get('fii'), 'bur')
         self.assertRaises(CacheMissException, self.c.get, "foo:one")
         self.assertRaises(CacheMissException, self.c.get, "foo:two")
